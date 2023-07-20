@@ -114,5 +114,8 @@ public class CalculationActivity extends AppCompatActivity {
         if (current > sunset || current < sunrise) {
             binding.dayNightImage.setImageResource(R.drawable.moon);
         }
+
+        String location = DateManager.getInstance().getLocation(this);
+        binding.placeDetail.setText(location);
     }
 }

@@ -9,6 +9,8 @@ public class Item {
     String sunrise;
     @PropertyElement(name = "sunset")
     String sunset;
+    @PropertyElement(name = "location")
+    String location;
 
     public String getSunrise() {
         return sunrise;
@@ -16,5 +18,9 @@ public class Item {
 
     public String getSunset() {
         return sunset;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

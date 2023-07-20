@@ -7,10 +7,12 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface SunsetApi {
-    @GET("/B090041/openapi/service/RiseSetInfoService/getAreaRiseSetInfo")
+    @GET("/B090041/openapi/service/RiseSetInfoService/getLCRiseSetInfo")
     Call<Sunset> getSunset(
             @Query(value = "serviceKey", encoded = true) String serviceKey,
             @Query("locdate") String locdate,
-            @Query("location") String location
+            @Query("longitude") String longitude,
+            @Query("latitude") String latitude,
+            @Query("dnYn") String dnYn
     );
 }

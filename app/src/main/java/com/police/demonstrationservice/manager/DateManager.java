@@ -3,6 +3,7 @@ package com.police.demonstrationservice.manager;
 import static android.content.Context.MODE_PRIVATE;
 import static com.police.demonstrationservice.Constants.API_SUNSET_BASE_URL;
 import static com.police.demonstrationservice.Constants.SHARED_PREFERENCES_DATE_KEY;
+import static com.police.demonstrationservice.Constants.SHARED_PREFERENCES_LOCATION;
 import static com.police.demonstrationservice.Constants.SHARED_PREFERENCES_RECORD_DATE_KEY;
 import static com.police.demonstrationservice.Constants.SHARED_PREFERENCES_SUNRISE_KEY;
 import static com.police.demonstrationservice.Constants.SHARED_PREFERENCES_SUNSET_KEY;
@@ -11,8 +12,9 @@ import static com.police.demonstrationservice.Constants.YEAR_MONTH_DAY_DATE_FORM
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.location.Location;
+import android.location.LocationManager;
 import android.util.Log;
-
 
 import com.police.demonstrationservice.rest_api.sunset.SunsetApi;
 import com.police.demonstrationservice.rest_api.xml_data.Sunset;
@@ -57,6 +59,11 @@ public class DateManager {
         return sharedPreferences.getString(SHARED_PREFERENCES_SUNRISE_KEY, "");
     }
 
+    public String getLocation(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_RECORD_DATE_KEY, MODE_PRIVATE);
+        return sharedPreferences.getString(SHARED_PREFERENCES_LOCATION, "");
+    }
+
     public void updateDate(Context context, String key) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_RECORD_DATE_KEY, MODE_PRIVATE);
         String recordDate = sharedPreferences.getString(SHARED_PREFERENCES_DATE_KEY, "");
@@ -74,18 +81,26 @@ public class DateManager {
 
             SunsetApi sunsetApi = retrofit.create(SunsetApi.class);
 
-            sunsetApi.getSunset(key, DateManager.getInstance().getCurrentDate(YEAR_MONTH_DAY_DATE_FORMAT).replaceAll("-", ""), "서울")
-                    .enqueue(new Callback<Sunset>() {
+            LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+
+            @SuppressLint("MissingPermission") Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+            sunsetApi.getSunset(key, DateManager.getInstance().getCurrentDate(YEAR_MONTH_DAY_DATE_FORMAT).replaceAll("-", ""),
+                            String.valueOf(current.getLongitude()), String.valueOf(current.getLatitude()), "Y"
+                    )
+                    .enqueue(new Callback<>() {
                         @Override
                         public void onResponse(Call<Sunset> call, Response<Sunset> response) {
                             if (response.isSuccessful() && response.body() != null) {
                                 String sunrise = response.body().getBody().getItems().getItem().getSunrise();
                                 String sunset = response.body().getBody().getItems().getItem().getSunset();
+                                String location = response.body().getBody().getItems().getItem().getLocation();
 
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.putString(SHARED_PREFERENCES_DATE_KEY, currentDate);
                                 editor.putString(SHARED_PREFERENCES_SUNRISE_KEY, sunrise);
                                 editor.putString(SHARED_PREFERENCES_SUNSET_KEY, sunset);
+                                editor.putString(SHARED_PREFERENCES_LOCATION, location);
                                 editor.apply();
                             } else {
                                 Log.d("오류", String.valueOf(response.code()));

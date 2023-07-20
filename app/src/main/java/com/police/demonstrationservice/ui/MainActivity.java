@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.widget.Toast;
 
 import com.police.demonstrationservice.manager.DateManager;
@@ -33,19 +35,19 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        KeyStoreManager.getInstance().getPublicKey(getApplicationContext(), (key) -> {
-            // 하루마다 날짜 업데이트, 날짜 변경 시 일출 일몰 시간 업데이트
-            DateManager.getInstance().updateDate(MainActivity.this, key);
-        });
+        initButton();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // check permission
         locationPermissionRequest.launch(new String[]{
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION
         });
-
-        initButton();
     }
-
 
     ActivityResultLauncher<String[]> locationPermissionRequest =
             registerForActivityResult(new ActivityResultContracts
@@ -56,12 +58,23 @@ public class MainActivity extends AppCompatActivity {
                                 Manifest.permission.ACCESS_COARSE_LOCATION, false);
                         if (fineLocationGranted != null && fineLocationGranted) {
                             // Precise location access granted.
+                            KeyStoreManager.getInstance().getPublicKey(getApplicationContext(), (key) -> {
+                                // 하루마다 날짜 업데이트, 날짜 변경 시 일출 일몰 시간 업데이트
+                                DateManager.getInstance().updateDate(MainActivity.this, key);
+                            });
                         } else if (coarseLocationGranted != null && coarseLocationGranted) {
                             // Only approximate location access granted.
+                            KeyStoreManager.getInstance().getPublicKey(getApplicationContext(), (key) -> {
+                                // 하루마다 날짜 업데이트, 날짜 변경 시 일출 일몰 시간 업데이트
+                                DateManager.getInstance().updateDate(MainActivity.this, key);
+                            });
                         } else {
                             // No location access granted.
                             finish();
-                            Toast.makeText(this, "권한이 거부되어 서비스를 이용할 수 없습니다.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(this, "권한을 허용해주세요.", Toast.LENGTH_LONG).show();
+
+                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).setData(Uri.parse("package:" + getPackageName()));
+                            startActivity(intent);
                         }
                     }
             );

@@ -10,6 +10,7 @@ public class Constants {
     public static final String SHARED_PREFERENCES_DATE_KEY = "date";
     public static final String SHARED_PREFERENCES_SUNRISE_KEY = "sunrise";
     public static final String SHARED_PREFERENCES_SUNSET_KEY = "sunset";
+    public static final String SHARED_PREFERENCES_LOCATION = "location";
 
     public static final String SHARED_PREFERENCES_MESSAGE_KEY = "messageKey";
     public static final String SHARED_PREFERENCES_NOTIFICATION_KEY = "notification";

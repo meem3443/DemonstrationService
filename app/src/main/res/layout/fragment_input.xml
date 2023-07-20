@@ -593,7 +593,7 @@
                     android:id="@+id/windSpeedDecimal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="@string/zero_zero"
+                    android:hint="@string/number_zero"
                     android:inputType="number"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="@id/windSpeed"
