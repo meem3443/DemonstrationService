@@ -95,8 +95,4 @@ public class KeyStoreManager {
             e.printStackTrace();
         }
     }
-
-    public void getGoogleKey(Context context) {
-
-    }
 }
