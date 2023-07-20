@@ -1,4 +1,4 @@
-package com.police.demonstrationservice.ui.notification_type;
+package com.police.demonstrationservice.ui.input_notification;
 
 import static android.app.Activity.RESULT_OK;
 import static com.police.demonstrationservice.Constants.DEFAULT_EQUIVALENT_NOISE_DAY_ETC;
@@ -53,7 +53,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.police.demonstrationservice.DateManager;
+import com.police.demonstrationservice.manager.DateManager;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.databinding.FragmentInputBinding;
 import com.police.demonstrationservice.ui.Current_Place_M;

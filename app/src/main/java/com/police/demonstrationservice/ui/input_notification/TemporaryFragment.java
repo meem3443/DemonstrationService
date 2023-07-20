@@ -1,4 +1,4 @@
-package com.police.demonstrationservice.ui.notification_type;
+package com.police.demonstrationservice.ui.input_notification;
 
 import static com.police.demonstrationservice.Constants.NOTIFICATION_TYPE_FIRST;
 import static com.police.demonstrationservice.Constants.NOTIFICATION_TYPE_TENTH;

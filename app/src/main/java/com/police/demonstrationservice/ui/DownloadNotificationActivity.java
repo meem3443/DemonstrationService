@@ -38,7 +38,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.police.demonstrationservice.NetworkManager;
+import com.police.demonstrationservice.manager.NetworkManager;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.databinding.ActivityDownloadNotificationBinding;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequest;

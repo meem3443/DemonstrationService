@@ -1,15 +1,18 @@
 package com.police.demonstrationservice.ui;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
-import com.police.demonstrationservice.DateManager;
-import com.police.demonstrationservice.KeyStoreManager;
-import com.police.demonstrationservice.NetworkManager;
+import com.police.demonstrationservice.manager.DateManager;
+import com.police.demonstrationservice.manager.KeyStoreManager;
+import com.police.demonstrationservice.manager.NetworkManager;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.databinding.ActivityMainBinding;
 
@@ -35,8 +38,33 @@ public class MainActivity extends AppCompatActivity {
             DateManager.getInstance().updateDate(MainActivity.this, key);
         });
 
+        locationPermissionRequest.launch(new String[]{
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+        });
+
         initButton();
     }
+
+
+    ActivityResultLauncher<String[]> locationPermissionRequest =
+            registerForActivityResult(new ActivityResultContracts
+                            .RequestMultiplePermissions(), result -> {
+                        Boolean fineLocationGranted = result.getOrDefault(
+                                Manifest.permission.ACCESS_FINE_LOCATION, false);
+                        Boolean coarseLocationGranted = result.getOrDefault(
+                                Manifest.permission.ACCESS_COARSE_LOCATION, false);
+                        if (fineLocationGranted != null && fineLocationGranted) {
+                            // Precise location access granted.
+                        } else if (coarseLocationGranted != null && coarseLocationGranted) {
+                            // Only approximate location access granted.
+                        } else {
+                            // No location access granted.
+                            finish();
+                            Toast.makeText(this, "권한이 거부되어 서비스를 이용할 수 없습니다.", Toast.LENGTH_LONG).show();
+                        }
+                    }
+            );
 
     @Override
     public void onBackPressed() {

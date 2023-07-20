@@ -1,4 +1,4 @@
-package com.police.demonstrationservice;
+package com.police.demonstrationservice.manager;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,6 +9,7 @@ import androidx.security.crypto.MasterKey;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.police.demonstrationservice.BuildConfig;
 import com.police.demonstrationservice.rest_api.notification.NotificationApi;
 import com.police.demonstrationservice.ui.MainActivity;
 

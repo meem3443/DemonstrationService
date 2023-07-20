@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.police.demonstrationservice.DemonstrationAdapter;
+import com.police.demonstrationservice.ui.adapter.DemonstrationAdapter;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.database.DemonstrationDataBase;
 import com.police.demonstrationservice.database.DemonstrationInfo;

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.police.demonstrationservice.DateManager;
+import com.police.demonstrationservice.manager.DateManager;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.databinding.ActivityInputNotificationTemporaryBinding;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequest;

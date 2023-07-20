@@ -1,4 +1,4 @@
-package com.police.demonstrationservice;
+package com.police.demonstrationservice.ui.adapter;
 
 import android.content.res.Resources;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.database.DemonstrationInfo;
 import com.police.demonstrationservice.databinding.RecyclerviewDemonstrationBinding;
 

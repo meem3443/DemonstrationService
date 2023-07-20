@@ -1,4 +1,4 @@
-package com.police.demonstrationservice;
+package com.police.demonstrationservice.manager;
 
 import static com.police.demonstrationservice.Constants.PACKAGE_NAME;
 
@@ -10,6 +10,7 @@ import android.util.Log;
 
 import androidx.core.content.FileProvider;
 
+import com.police.demonstrationservice.BuildConfig;
 import com.police.demonstrationservice.rest_api.notification.NotificationApi;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequest;
 import com.police.demonstrationservice.ui.SendActivity;

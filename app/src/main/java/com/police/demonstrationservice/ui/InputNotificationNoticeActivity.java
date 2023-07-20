@@ -32,7 +32,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.police.demonstrationservice.DateManager;
+import com.police.demonstrationservice.manager.DateManager;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.databinding.ActivityInputNotificationNoticeBinding;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequest;

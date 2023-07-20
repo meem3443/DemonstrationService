@@ -1,4 +1,4 @@
-package com.police.demonstrationservice;
+package com.police.demonstrationservice.manager;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.police.demonstrationservice.Constants.API_SUNSET_BASE_URL;

@@ -31,15 +31,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
-import com.police.demonstrationservice.DateManager;
+import com.police.demonstrationservice.manager.DateManager;
 import com.police.demonstrationservice.R;
 import com.police.demonstrationservice.databinding.ActivityInputNotificationBinding;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequest;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequestAction;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequestCnt;
 import com.police.demonstrationservice.rest_api.notification.NotificationRequestItem;
-import com.police.demonstrationservice.ui.notification_type.InputFragment;
-import com.police.demonstrationservice.ui.notification_type.TemporaryFragment;
+import com.police.demonstrationservice.ui.input_notification.InputFragment;
+import com.police.demonstrationservice.ui.input_notification.TemporaryFragment;
 
 import java.util.Objects;
 
