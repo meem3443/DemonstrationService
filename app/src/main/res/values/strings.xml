@@ -1,0 +1,171 @@
+<resources>
+    <string name="app_name">시위 관리 서비스</string>
+
+    <string name="demonstration_management_service">시위 관리 서비스</string>
+    <string name="calculation_of_target_noise_level">대상 소음도 산출</string>
+    <string name="send_message_settings">발송 메시지 / 관인 설정</string>
+    <string name="sending_notification">명령서 발송</string>
+    <string name="sending_notification_list">명령서 발부 리스트</string>
+    <string name="date">날짜</string>
+    <string name="place">지역</string>
+    <string name="sunset_time">일몰시각</string>
+    <string name="background_noise">배경 소음도</string>
+    <string name="input_measurement_value">측정값 입력</string>
+    <string name="measurement_value">측정값</string>
+    <string name="input">입력</string>
+    <string name="save">저장</string>
+    <string name="complete">완료</string>
+    <string name="timeZone">시간대</string>
+    <string name="time_zone_day">주간</string>
+    <string name="time_zone_night">야간</string>
+    <string name="time_zone_late_night">심야</string>
+    <string name="place_zone">대상 지역</string>
+    <string name="place_zone_home">주거지역, 학교</string>
+    <string name="place_zone_public">공공도서관</string>
+    <string name="place_zone_etc">그 밖</string>
+    <string name="calculate_current_value">보정값 구하기</string>
+    <string name="cal_current_value">측정 소음도 산출</string>
+    <string name="example_decibel">65dB</string>
+    <string name="target_noise">대상 소음도</string>
+    <string name="setting_message">발송 메시지 / 관인 설정</string>
+    <string name="notification_message">안내문 메시지</string>
+    <string name="document_message">명령서 메시지</string>
+    <string name="upload_official_file">관인 파일 올리기</string>
+    <string name="write_attached_message">첨부 메시지 작성</string>
+    <string name="measurement_time">측정 시간</string>
+    <string name="measurement_place">측정 장소</string>
+    <string name="measurement_distance">측정 거리</string>
+    <string name="wind_speed">풍속</string>
+    <string name="highest">최고</string>
+    <string name="equivalence">등가</string>
+    <string name="current_value">측정 소음도</string>
+    <string name="standard_value">기준 소음도</string>
+    <string name="organizer_name">주최자 성함</string>
+    <string name="organizer_phone_number">주최자 전화번호</string>
+    <string name="noise_type">소음도 구분</string>
+    <string name="input_measurement">측정 정보 입력</string>
+    <string name="temporary">일시보관/조치사항</string>
+
+    <string name="send_notification">안내문 발송</string>
+    <string name="maintenance_order">유지 명령</string>
+    <string name="stop_order">중지 명령</string>
+    <string name="temporary_storage">일시 보관</string>
+    <string name="exceed_highest_noise">최고소음 초과</string>
+    <string name="exceed_equivalent_noise">등가소음 초과</string>
+    <string name="highest_noise_violation">최고소음 위반</string>
+    <string name="after_maintenance_order">유지명령 후 (등가·최고)</string>
+    <string name="skip_maintenance_order_equivalent">유지명령 생략(등가)</string>
+    <string name="skip_maintenance_order_highest">유지명령 생략(최고)</string>
+    <string name="skip_stop_order">중지명령 생략(유지명령 후)</string>
+    <string name="violation_after_a_stop_order">중지명령 후 위반</string>
+    <string name="temporary_storage_return_certificate">일시보관 반환증</string>
+
+    <string name="notification">안내문</string>
+    <string name="send">발송</string>
+
+    <string name="return_list">반환목록</string>
+
+    <string name="equivalence_noise">등가소음도</string>
+    <string name="highest_noise">최고소음도</string>
+
+    <string name="title_type_one">최고소음 초과, 유지</string>
+    <string name="title_type_two">등가소음 초과, 유지</string>
+    <string name="title_type_three">최고소음 위반, 유지</string>
+
+    <string name="example_notification_message">안내문을 발부할 때 첨부할 텍스트 메시지를 입력해 주세요.</string>
+    <string name="example_document_message">명령서를 발부할 때 첨부할 텍스트 메시지를 입력해 주세요.</string>
+    <string name="plz_input_content">내용을 입력해 주세요.</string>
+    <string name="example_date">2023년 7월 2일</string>
+    <string name="example_place">대전</string>
+    <string name="example_sunset_time">19시 52분</string>
+    <string name="example_input_place">대전광역시 계백로 1686번길 51</string>
+    <string name="plz_input_detail_place">상세주소를 입력해주세요.</string>
+    <string name="plz_input_place">주소를 입력해주세요.</string>
+    <string name="hundred">100</string>
+    <string name="meter">m</string>
+    <string name="zero_zero">00</string>
+    <string name="example_noise">0 dB</string>
+
+    <string name="no_list">내용 없음</string>
+
+    <string name="number_zero">0</string>
+    <string name="number_one">1</string>
+    <string name="number_two">2</string>
+    <string name="number_three">3</string>
+    <string name="number_four">4</string>
+    <string name="number_five">5</string>
+
+    <string name="input_start_time">시작 시간 입력</string>
+    <string name="input_end_time">마침 시간 입력</string>
+
+    <string name="number">연번</string>
+    <string name="item">품목</string>
+    <string name="quantity">수량</string>
+    <string name="note">비고</string>
+    <string name="spot">장소</string>
+    <string name="note_significant">비고(특이사항 등)</string>
+    <string name="abnormality">이상유무</string>
+
+    <string name="space">&#160;</string>
+    <string name="tilde">~</string>
+    <string name="dash">-</string>
+    <string name="split_space">\\s</string>
+    <string name="dot">.</string>
+    <string name="slash">/</string>
+    <string name="open_bracket">[</string>
+    <string name="close_bracket">]</string>
+    <string name="colon">:</string>
+    <string name="comma">,</string>
+
+    <string name="year">년</string>
+    <string name="month">월</string>
+    <string name="day">일</string>
+    <string name="hour">시</string>
+    <string name="minute">분</string>
+    <string name="seconds">초</string>
+    <string name="decibel">dB</string>
+    <string name="example_time">00 : 00</string>
+    <string name="meter_per_second">m/s</string>
+    <string name="zero_space">0&#160;</string>
+
+    <string name="plz_input_background">배경소음도를 입력해주세요.</string>
+    <string name="plz_input_measurement">측정값을 입력해주세요.</string>
+    <string name="complete_save">저장이 완료되었습니다.</string>
+    <string name="plz_input_measurement_place">측정 장소를 입력해주세요.</string>
+    <string name="plz_input_wind_speed">풍속을 입력해주세요.</string>
+    <string name="plz_input_organizer_name">주최자 성함을 입력해주세요.</string>
+    <string name="plz_input_organizer_phone_number">주최자 전화번호를 입력해주세요.</string>
+    <string name="plz_input_measurement_noise">측정 소음도를 입력해주세요.</string>
+    <string name="plz_confirm_measurement_noise">측정 소음도를 확인해주세요.</string>
+    <string name="plz_retry">잠시 후 다시 시도해주세요.</string>
+
+    <string name="plz_retry_connect_network">네트워크를 확인하고 다시 시도해주세요.</string>
+    <string name="press_the_back_button">\'뒤로\' 버튼을 한 번 더 누르면 종료됩니다.</string>
+    <string name="complete_add_notification">고지 내용이 저장되었습니다.</string>
+
+    <string name="plz_check_connected_internet">네트워크 연결을 확인해주세요.</string>
+
+    <string name="plz_input_number">숫자를 입력해주세요.</string>
+
+    <string name="second_record">두 번째 기록의</string>
+    <string name="third_record">세 번째 기록의</string>
+
+    <string name="temporary_title">집회 종료 시까지 확성기 등 일시보관</string>
+    <string name="add">추가</string>
+    <string name="etc">기타 필요한 조치</string>
+    <string name="what_to_do">조치 사항</string>
+
+    <string name="order_time">이전 명령 시간</string>
+
+    <string name="cant_add_more">더 이상 추가할 수 없습니다.</string>
+    <string name="not_exist_recent_measurement">최근 측정한 기록이 없습니다.</string>
+
+    <string name="setting">설정</string>
+    <string name="current_measurement_place">현재 측정 장소</string>
+
+    <string-array name="spinner_count">
+        <item>1 회차</item>
+        <item>2 회차</item>
+        <item>3 회차</item>
+    </string-array>
+</resources>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backButton"
+        style="@style/BackButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/SubtitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sending_notification"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/firstButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="20dp"
+                android:text="@string/send_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/maintenanceOrder"
+                style="@style/SubtitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/maintenance_order"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/secondButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="5dp"
+                android:text="@string/exceed_highest_noise"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/maintenanceOrder" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/thirdButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/exceed_equivalent_noise"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fourthButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/highest_noise_violation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thirdButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stopOrder"
+                style="@style/SubtitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/stop_order"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fourthButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fifthButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="5dp"
+                android:text="@string/after_maintenance_order"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stopOrder" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sixthButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/skip_maintenance_order_equivalent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fifthButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seventhButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/skip_maintenance_order_highest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sixthButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/temporaryStorage"
+                style="@style/SubtitleTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/temporary_storage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seventhButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/eighthButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="5dp"
+                android:text="@string/skip_maintenance_order_equivalent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/temporaryStorage" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ninthButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/skip_maintenance_order_highest"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eighthButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tenthButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/skip_stop_order"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ninthButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/eleventhButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:text="@string/violation_after_a_stop_order"
+                app:layout_constraintBottom_toTopOf="@id/twelveButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tenthButton" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/twelveButton"
+                style="@style/NotificationButtonStyle"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="@string/temporary_storage_return_certificate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eleventhButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

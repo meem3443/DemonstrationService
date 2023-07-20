@@ -1,0 +1,434 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backButton"
+        style="@style/BackButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/SubtitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send_notification"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/complete"
+        android:textColor="@color/sky_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/firstLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/white_box"
+                android:paddingVertical="10dp"
+                app:layout_constraintBottom_toTopOf="@id/secondLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:text="@string/date"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@id/place"
+                    app:layout_constraintEnd_toStartOf="@id/dateDetail"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/dateDetail"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@id/date"
+                    app:layout_constraintTop_toTopOf="@id/date" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/place"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:text="@string/place"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toTopOf="@id/sunsetTime"
+                    app:layout_constraintEnd_toStartOf="@id/placeDetail"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeDetail"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_place"
+                    app:layout_constraintBottom_toBottomOf="@id/place"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@id/place"
+                    app:layout_constraintTop_toTopOf="@id/place" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sunsetTime"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:text="@string/sunset_time"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/place"
+                    app:layout_constraintEnd_toStartOf="@id/sunsetTimeDetail"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="@id/place"
+                    app:layout_constraintTop_toBottomOf="@id/place" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sunsetTimeDetail"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_sunset_time"
+                    app:layout_constraintBottom_toBottomOf="@id/sunsetTime"
+                    app:layout_constraintEnd_toStartOf="@id/dayNightImage"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toStartOf="@id/placeDetail"
+                    app:layout_constraintTop_toTopOf="@id/sunsetTime" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/dayNightImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/sun"
+                    app:layout_constraintBottom_toBottomOf="@id/sunsetTime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/sunsetTimeDetail"
+                    app:layout_constraintTop_toTopOf="@id/sunsetTime" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/secondLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_box"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@id/thirdLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/timeZone"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/timeZone"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/dayButton"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/dayButton"
+                    style="@style/ContentButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time_zone_day"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/nightButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/timeZone" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/nightButton"
+                    style="@style/UnClickButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/time_zone_night"
+                    app:layout_constraintBottom_toBottomOf="@id/dayButton"
+                    app:layout_constraintEnd_toStartOf="@id/lateNightButton"
+                    app:layout_constraintStart_toEndOf="@id/dayButton"
+                    app:layout_constraintTop_toTopOf="@id/dayButton" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/lateNightButton"
+                    style="@style/UnClickButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time_zone_late_night"
+                    app:layout_constraintBottom_toBottomOf="@id/dayButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/nightButton"
+                    app:layout_constraintTop_toTopOf="@id/dayButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/thirdLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_box"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@id/fourthLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/placeZone"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="@string/place_zone"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/homeButton"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/homeButton"
+                    style="@style/ContentButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/place_zone_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/publicButton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/placeZone" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/publicButton"
+                    style="@style/UnClickButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/place_zone_public"
+                    app:layout_constraintBottom_toBottomOf="@id/homeButton"
+                    app:layout_constraintEnd_toStartOf="@id/etcButton"
+                    app:layout_constraintStart_toEndOf="@id/homeButton"
+                    app:layout_constraintTop_toTopOf="@id/homeButton" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/etcButton"
+                    style="@style/UnClickButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/place_zone_etc"
+                    app:layout_constraintBottom_toBottomOf="@id/homeButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/publicButton"
+                    app:layout_constraintTop_toTopOf="@id/homeButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fourthLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_box"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@id/fifthLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thirdLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/highest"
+                    style="@style/SubtitleTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/standard_value"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/equivalenceNoise"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/equivalenceNoise"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/equivalence_noise"
+                    app:layout_constraintBottom_toTopOf="@id/highestNoise"
+                    app:layout_constraintEnd_toStartOf="@id/equivalenceNoiseDetail"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/highest" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/equivalenceNoiseDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_noise"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/equivalenceNoise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="6"
+                    app:layout_constraintStart_toEndOf="@id/equivalenceNoise"
+                    app:layout_constraintTop_toTopOf="@id/equivalenceNoise" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/highestNoise"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/highest_noise"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/highestNoiseDetail"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/equivalenceNoise" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/highestNoiseDetail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_noise"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/highestNoise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="6"
+                    app:layout_constraintStart_toEndOf="@id/highestNoise"
+                    app:layout_constraintTop_toTopOf="@id/highestNoise" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fifthLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/white_box"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fourthLayout">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/name"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/organizer_name"
+                    app:layout_constraintBottom_toTopOf="@id/phoneNumber"
+                    app:layout_constraintEnd_toStartOf="@id/inputName"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/inputName"
+                    style="@style/InputEditTextStyle"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    app:layout_constraintBottom_toBottomOf="@id/name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="6"
+                    app:layout_constraintStart_toEndOf="@id/name"
+                    app:layout_constraintTop_toTopOf="@id/name" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/phoneNumber"
+                    style="@style/ContentTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/organizer_phone_number"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/inputPhoneNumber"
+                    app:layout_constraintHorizontal_weight="4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/inputPhoneNumber"
+                    style="@style/InputEditTextStyle"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toBottomOf="@id/phoneNumber"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="6"
+                    app:layout_constraintStart_toEndOf="@id/phoneNumber"
+                    app:layout_constraintTop_toTopOf="@id/phoneNumber" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

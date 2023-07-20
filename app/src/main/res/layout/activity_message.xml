@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/backButton"
+        style="@style/BackButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        style="@style/SubtitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_message"
+        app:layout_constraintBottom_toBottomOf="@id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backButton" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/notificationMessage"
+        style="@style/SubtitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/notification_message"
+        app:layout_constraintBottom_toTopOf="@id/notificationMessageDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/notificationMessageDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/box_border"
+        android:hint="@string/example_notification_message"
+        android:padding="20dp"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/documentMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationMessage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/documentMessage"
+        style="@style/SubtitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/document_message"
+        app:layout_constraintBottom_toTopOf="@id/documentMessageDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notificationMessageDetail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/documentMessageDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/box_border"
+        android:hint="@string/example_document_message"
+        android:padding="20dp"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/uploadOfficialFile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/documentMessage" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uploadOfficialFile"
+        style="@style/SubtitleTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/upload_official_file"
+        app:layout_constraintBottom_toTopOf="@id/uploadOfficialFileButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/documentMessageDetail" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uploadOfficialFileButton"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/box_border"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/uploadOfficialFile" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/plusImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_add_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="@id/uploadOfficialFileButton"
+        app:layout_constraintEnd_toEndOf="@id/uploadOfficialFileButton"
+        app:layout_constraintStart_toStartOf="@id/uploadOfficialFileButton"
+        app:layout_constraintTop_toTopOf="@id/uploadOfficialFileButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

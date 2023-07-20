@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/temporary"
+                style="@style/ContentTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temporary_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/addTemporaryButton"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addTemporaryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:textColor="@color/sky_blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/temporary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/temporary"
+                app:layout_constraintTop_toTopOf="@id/temporary" />
+
+            <TableLayout
+                android:id="@+id/temporaryLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/table_outside"
+                android:shrinkColumns="0, 2"
+                android:stretchColumns="1, 3, 4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/temporary">
+
+                <TableRow android:background="@drawable/table_title">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_topleft"
+                        android:padding="10dp"
+                        android:text="@string/number"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp"
+                        android:text="@string/item"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp"
+                        android:text="@string/quantity"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp"
+                        android:text="@string/note"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_topright"
+                        android:padding="10dp"
+                        android:text="@string/spot"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow android:id="@+id/temporaryRow1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/temporaryNumber1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_one" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputItem1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputQuantity1"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputQuantity1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/inputNote1"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputNote1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputPlace1"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputPlace1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomright"
+                        android:imeOptions="actionDone"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/temporaryRow2"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/temporaryNumber2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_two" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputItem2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputQuantity2"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputQuantity2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/inputNote2"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputNote2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputPlace2"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputPlace2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomright"
+                        android:imeOptions="actionDone"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/temporaryRow3"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/temporaryNumber3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_three" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputItem3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputQuantity3"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputQuantity3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/inputNote3"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputNote3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputPlace3"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputPlace3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomright"
+                        android:imeOptions="actionDone"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/temporaryRow4"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/temporaryNumber4"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_four" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputItem4"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputQuantity4"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputQuantity4"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:nextFocusDown="@id/inputNote4"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputNote4"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:imeOptions="actionNext"
+                        android:nextFocusDown="@id/inputPlace4"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputPlace4"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomright"
+                        android:imeOptions="actionDone"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <View
+                android:id="@+id/rowLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/table_gray"
+                app:layout_constraintTop_toBottomOf="@id/temporaryLayout" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/etc"
+                style="@style/ContentTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/etc"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/addEtcButton"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rowLine" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/addEtcButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add"
+                android:textColor="@color/sky_blue"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/etc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/etc"
+                app:layout_constraintTop_toTopOf="@id/etc" />
+
+            <TableLayout
+                android:id="@+id/etcLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/table_outside"
+                android:shrinkColumns="0"
+                android:stretchColumns="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etc">
+
+                <TableRow android:background="@drawable/table_title">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_topleft"
+                        android:padding="10dp"
+                        android:text="@string/number"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp"
+                        android:text="@string/what_to_do"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow android:id="@+id/etcRow1">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etcNumber1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_one" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputWhatToDo1"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/etcRow2"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etcNumber2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_two" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputWhatToDo2"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/etcRow3"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etcNumber3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside_radius_bottomleft"
+                        android:padding="10dp"
+                        android:text="@string/number_three" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/inputWhatToDo3"
+                        style="@style/SmallTextStyle"
+                        android:background="@drawable/table_inside"
+                        android:padding="10dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
