@@ -24,7 +24,6 @@
     <string name="place_zone_public">공공도서관</string>
     <string name="place_zone_etc">그 밖</string>
     <string name="calculate_current_value">보정값 구하기</string>
-    <string name="cal_current_value">측정 소음도 산출</string>
     <string name="example_decibel">65dB</string>
     <string name="target_noise">대상 소음도</string>
     <string name="setting_message">발송 메시지 / 관인 설정</string>
@@ -38,7 +37,6 @@
     <string name="wind_speed">풍속</string>
     <string name="highest">최고</string>
     <string name="equivalence">등가</string>
-    <string name="current_value">측정 소음도</string>
     <string name="standard_value">기준 소음도</string>
     <string name="organizer_name">주최자 성함</string>
     <string name="organizer_phone_number">주최자 전화번호</string>
@@ -51,7 +49,7 @@
     <string name="stop_order">중지 명령</string>
     <string name="temporary_storage">일시 보관</string>
     <string name="exceed_highest_noise">최고소음 초과</string>
-    <string name="exceed_equivalent_noise">등가소음 초과</string>
+    <string name="exceed_equivalent_noise">등가소음 위반</string>
     <string name="highest_noise_violation">최고소음 위반</string>
     <string name="after_maintenance_order">유지명령 후 (등가·최고)</string>
     <string name="skip_maintenance_order_equivalent">유지명령 생략(등가)</string>
@@ -69,7 +67,7 @@
     <string name="highest_noise">최고소음도</string>
 
     <string name="title_type_one">최고소음 초과, 유지</string>
-    <string name="title_type_two">등가소음 초과, 유지</string>
+    <string name="title_type_two">등가소음 위반, 유지</string>
     <string name="title_type_three">최고소음 위반, 유지</string>
 
     <string name="example_notification_message">안내문을 발부할 때 첨부할 텍스트 메시지를 입력해 주세요.</string>

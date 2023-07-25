@@ -99,10 +99,10 @@ public class InputFragment extends Fragment {
     ActivityResultLauncher<Intent> launcher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if(result.getResultCode() == RESULT_OK) {
+                if (result.getResultCode() == RESULT_OK) {
                     Intent intent = result.getData();
                     Bundle bundle = intent.getBundleExtra("result");
-                    if(bundle != null){
+                    if (bundle != null) {
 
                         binding.inputPlace.setText(bundle.getString("M_add"));
                         binding.measurementDistanceDetail.setText(bundle.getString("D_add"));
@@ -168,6 +168,18 @@ public class InputFragment extends Fragment {
 
         if (current > sunset || current < sunrise) {
             binding.dayNightImage.setImageResource(R.drawable.moon);
+        }
+
+        if (notificationType == NOTIFICATION_TYPE_SECOND
+                || notificationType == NOTIFICATION_TYPE_FOURTH
+                || notificationType == NOTIFICATION_TYPE_FIFTH
+                || notificationType == NOTIFICATION_TYPE_SEVENTH
+                || notificationType == NOTIFICATION_TYPE_NINTH) {
+            binding.highest.setText(getString(R.string.equivalence));
+        }
+
+        if (notificationType == NOTIFICATION_TYPE_TENTH) {
+            binding.highest.setVisibility(View.GONE);
         }
     }
 
@@ -247,7 +259,6 @@ public class InputFragment extends Fragment {
                 inputManager.hideSoftInputFromWindow(currentFocus.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
             }
 
-
             if (Objects.requireNonNull(binding.inputBackgroundNoise.getText()).toString().equals("")) {
                 Toast.makeText(requireContext(), getString(R.string.plz_input_background), Toast.LENGTH_SHORT).show();
             } else if (Objects.requireNonNull(binding.inputMeasurementNoise.getText()).toString().equals("")) {
@@ -301,6 +312,7 @@ public class InputFragment extends Fragment {
 
         binding.equivalenceButton.setOnClickListener(e -> {
             noiseType = NOISE_TYPE_EQUIVALENT;
+            binding.highest.setText(getString(R.string.equivalence));
             binding.equivalenceButton.setBackgroundResource(R.drawable.content_button);
             binding.equivalenceButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.main_color));
             binding.highestButton.setBackgroundResource(R.drawable.unclick_button);
@@ -311,6 +323,7 @@ public class InputFragment extends Fragment {
 
         binding.highestButton.setOnClickListener(e -> {
             noiseType = NOISE_TYPE_HIGHEST;
+            binding.highest.setText(getString(R.string.highest));
             binding.highestButton.setBackgroundResource(R.drawable.content_button);
             binding.highestButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.main_color));
             binding.equivalenceButton.setBackgroundResource(R.drawable.unclick_button);

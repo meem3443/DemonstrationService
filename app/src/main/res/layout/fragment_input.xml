@@ -676,7 +676,7 @@
                     style="@style/MainButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cal_current_value"
+                    android:text="@string/calculation_of_target_noise_level"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/inputMeasurementNoise" />
@@ -713,7 +713,7 @@
                     style="@style/ContentTextStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/current_value"
+                    android:text="@string/target_noise"
                     app:layout_constraintBottom_toTopOf="@id/standardNoise"
                     app:layout_constraintEnd_toStartOf="@id/measurementNoiseDetail"
                     app:layout_constraintHorizontal_weight="4"
