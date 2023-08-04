@@ -31,7 +31,7 @@ public class Current_Place_M extends AppCompatActivity  {
 
 
 
-
+    private int hello;
 
 
     @Override
