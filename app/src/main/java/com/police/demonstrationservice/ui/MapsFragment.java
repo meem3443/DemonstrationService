@@ -38,6 +38,7 @@ import com.police.demonstrationservice.R;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 import java.util.StringTokenizer;
 
 
@@ -50,6 +51,8 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     boolean End = false;
     UiSettings uiSettings;
 
+
+    String SearchedAddress = null;
 
     Bundle result = new Bundle();
 
@@ -261,15 +264,65 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
             Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (lastKnownLocation != null) {
-                LatLng currentLatLng = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-                M_Location = currentLatLng;
-                Log.d("테스트", "마커 찍기");
-                marker = googleMap.addMarker(new MarkerOptions().position(currentLatLng).title("Current Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16));
-                ((Current_Place_M) getActivity()).setText(getCurrentAddress(currentLatLng.latitude, currentLatLng.longitude));
+                if(SearchedAddress == null){
+                    LatLng currentLatLng = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+                    M_Location = currentLatLng;
+                    Log.d("테스트", "마커 찍기");
+                    marker = googleMap.addMarker(new MarkerOptions().position(currentLatLng).title("Current Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 16));
+                    ((Current_Place_M) getActivity()).setText(getCurrentAddress(currentLatLng.latitude, currentLatLng.longitude));
+                }else {
+                    getCoordinatesFromAddress(SearchedAddress);
+                }
+
             }
         }
     }
+
+
+    public void  setSearchedAddress(String data){
+        SearchedAddress = data;
+
+
+        getCoordinatesFromAddress(data);;
+
+
+
+    }
+
+    private void getCoordinatesFromAddress(String address) {
+        Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
+        try {
+            List<Address> addressList = geocoder.getFromLocationName(address, 1);
+
+            if (addressList != null && !addressList.isEmpty()) {
+                Address location = addressList.get(0);
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+                LatLng temp = new LatLng(latitude,longitude);
+                if(marker != null){
+                    marker.remove();
+                }
+                if(code == 0){
+                    M_Location = temp;
+                }else {
+                    D_Location = temp;
+                }
+                MarkerOptions mOptions = new MarkerOptions();
+                mOptions.position(temp).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+                marker = googleMap.addMarker(mOptions); //맵상에 마커 하나만 존재하기 위해서 저장합니다.
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(temp, googleMap.getCameraPosition().zoom));
+
+
+            } else {
+                Log.e("TAG", "주소를 찾을 수 없습니다.");
+            }
+
+        } catch (IOException e) {
+            Log.e("TAG", "Error: " + e.getMessage());
+        }
+    }
+
 
     private String getCurrentAddress(double latitude, double longitude) {
         Geocoder geocoder = new Geocoder(getContext());

@@ -3,8 +3,12 @@ package com.police.demonstrationservice.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -27,6 +31,8 @@ public class Current_Place_M extends AppCompatActivity  {
 
     TextView current_position;
 
+    EditText address;
+
     private int code = 0;
 
 
@@ -43,7 +49,17 @@ public class Current_Place_M extends AppCompatActivity  {
         current_position = findViewById(R.id.Current_Location);
         back = findViewById(R.id.backButton);
         State_Text = findViewById(R.id.State_Text);
+        address = findViewById(R.id.editTextText2);
 
+        address.setFocusable(false);
+        address.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Current_Place_M.this, SearchActivity.class);
+                getSearchResult.launch(intent);
+
+            }
+        });
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -86,6 +102,8 @@ public class Current_Place_M extends AppCompatActivity  {
         });
     }
 
+
+
     public void OkFinsih(){
         Intent intent = new Intent(Current_Place_M.this, InputNotificationActivity.class);
         intent.putExtra("result",send_data);
@@ -101,5 +119,17 @@ public class Current_Place_M extends AppCompatActivity  {
         current_position.setText(data);
     }
 
+    private final ActivityResultLauncher<Intent> getSearchResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if(result.getResultCode() == RESULT_OK){
+                    if(result.getData() != null){
+                        String data = result.getData().getStringExtra("data");
+                        mapsFragment.setSearchedAddress(data);
+                        current_position.setText(data);
+                    }
+                }
+            }
+    );
 
 }

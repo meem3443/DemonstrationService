@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -21,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DemonstrationService"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.SearchActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -41,10 +43,10 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.CalculationActivity" />
         <activity android:name=".ui.MessageActivity" />
         <activity android:name=".ui.AttachedMessageActivity" />
@@ -56,8 +58,7 @@
         <activity android:name=".ui.InputNotificationTemporaryActivity" />
         <activity android:name=".ui.DemonstrationListActivity" />
         <activity android:name=".ui.DownloadNotificationActivity" />
-        <activity android:name=".ui.Current_Place_M"/>
-
+        <activity android:name=".ui.Current_Place_M" />
     </application>
 
 </manifest>
